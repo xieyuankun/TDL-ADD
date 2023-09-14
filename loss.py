@@ -98,15 +98,15 @@ class EmbeddingLoss(nn.Module):
 
             # fake embeddings should be different with real embeddings
             sim_f2r = self.cosine_similarity(f_embedding, r_embedding)
-            # fg2bg
+            # f2r
             sim_f2r_hard = torch.max(sim_f2r, dim=1)[0]
             zero = torch.zeros_like(sim_f2r_hard)
             loss_f2r = torch.max(sim_f2r_hard - self.th_different_max, zero)
             loss_f2r = loss_f2r.mean()
-            # bg2fg
+            # r2f
             sim_b2f_hard = torch.max(sim_f2r, dim=0)[0]
-            zero = torch.zeros_like(sim_b2f_hard)
-            loss_r2f = torch.max(sim_b2f_hard - self.th_different_max, zero)
+            zero = torch.zeros_like(sim_r2f_hard)
+            loss_r2f = torch.max(sim_r2f_hard - self.th_different_max, zero)
             loss_r2f = loss_r2f.mean()
 
             loss_batch = loss_batch + loss_f2f + loss_r2r + loss_f2r + loss_r2f
