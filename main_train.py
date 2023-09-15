@@ -140,10 +140,6 @@ def train(args):
                                   shuffle=False, num_workers=args.num_workers, collate_fn=validation_set.collate_fn,
                                   sampler=torch_sampler.SubsetRandomSampler(range(24844)))
     valOri_flow = iter(valOriDataLoader)
-    test_set = ASVspoof2019(args.access_type, args.path_to_features, "eval", args.feat, feat_len=args.feat_len,
-                            pad_chop=args.pad_chop, padding=args.padding)
-    testDataLoader = DataLoader(test_set, batch_size=args.batch_size, shuffle=False, num_workers=args.num_workers,
-                                collate_fn=test_set.collate_fn)
     weight = torch.FloatTensor([0.01, 0.99]).to(args.device)
     if args.base_loss == "ce":
         criterion = nn.CrossEntropyLoss(weight=weight)
@@ -162,7 +158,6 @@ def train(args):
         feat_model.train()
         trainlossDict = defaultdict(list)
         devlossDict = defaultdict(list)
-        testlossDict = defaultdict(list)
         adjust_learning_rate(args, args.lr, feat_optimizer, epoch_num)
         print('\nEpoch: %d ' % (epoch_num + 1))
         correct_m, total_m, correct_c, total_c, correct_v, total_v = 0, 0, 0, 0, 0, 0
