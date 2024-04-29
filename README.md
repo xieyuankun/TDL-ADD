@@ -1,5 +1,4 @@
 # TDL for partially deepfake detection
->>>>>>> e8c2ecf391b015152aff89ff7afc42b1e5bc369d
 This is the pytorch implementation of our work titled "An Efficient Temporary Deepfake Location Approach Based Embeddings for Partially Spoofed Audio Detection ," which was available on arxiv at "https://arxiv.org/abs/2309.03036".
 
 ##  1. Offline Data Extraction
