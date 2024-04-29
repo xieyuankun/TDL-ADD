@@ -6,10 +6,9 @@ Please download the training, development and evaluation set from [ASVspoof Part
 
 Please ensure the data and label position are correct. If you need to adjust, please modify the calss ASVspoof2019PSRaw in raw_dataset.py.
 
-After downloading, plase put the train, dev, and eval wave folders of 19PS under `/home/xieyuankun/data/asv2019PS/`
+After downloading, plase place the train, dev, and eval raw wave folders of 19PS under `/home/xieyuankun/data/asv2019PS/`.
 
-Put the train, dev, and eval label under `/home/xieyuankun/data/asv2019PS/ASVspoof2019_PS_cm_protocols/`. 
-We provided the padded label in `./label/`
+We have provided the padded label in `./label/`. Please place the train, dev, and eval labels under `/home/xieyuankun/data/asv2019PS/ASVspoof2019_PS_cm_protocols/`.
 
 After preprocess, the last hidden states of wav2vec2 will be saved in `/home/xieyuankun/data/asv2019PS/preprocess_xls-r-300m`.
 
