@@ -44,7 +44,7 @@ def initParams():
     parser.add_argument('--beta_2', type=float, default=0.999, help="beta_2 for Adam")
     parser.add_argument('--eps', type=float, default=1e-8, help="epsilon for Adam")
     parser.add_argument("--gpu", type=str, help="GPU index", default="13")
-    parser.add_argument('--num_workers', type=int, default=0, help="number of workers")
+    parser.add_argument('--num_workers', type=int, default=8, help="number of workers")
     parser.add_argument('--base_loss', type=str, default="bce", choices=["ce", "bce"],
                         help="use which loss for basic training")
     parser.add_argument('--add_loss', type=str, default=None,

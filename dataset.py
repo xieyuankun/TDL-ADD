@@ -116,7 +116,7 @@ class ASVspoof2019PS(Dataset):
         self.path = os.path.join(self.ptf, 'xls-r-300m')
         # self.all_files = librosa.util.find_files(os.path.join(self.ptf, self.feature), ext="pt")
         protocol = os.path.join(os.path.join('/home/xieyuankun/data/asv2019PS/ASVspoof2019_PS_cm_protocols/',
-                                             'PF_' + self.part + '_0.16_real1_pad1.txt'))
+                                             'PS_' + self.part + '_0.16_real1_pad1.txt'))
         with open(protocol, 'r') as f:
             audio_info = [info.strip().split(' ', 2) for info in f.readlines()]
         self.all_info = audio_info
