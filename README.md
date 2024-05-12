@@ -2,9 +2,12 @@
 This is the pytorch implementation of our work titled "An Efficient Temporary Deepfake Location Approach Based Embeddings for Partially Spoofed Audio Detection ," which was available on arxiv at "https://arxiv.org/abs/2309.03036".
 
 ##  1. Offline Data Extraction
+```
+python preprocess.py 
+```
 Please download the training, development and evaluation set from [ASVspoof PartialSpoof Database](https://zenodo.org/records/5766198) first.
 
-Please ensure the data and label position are correct. If you need to adjust, please modify the calss ASVspoof2019PSRaw in raw_dataset.py.
+Please ensure the data and label position are correct. If you need to adjust, please modify the class ASVspoof2019PSRaw in raw_dataset.py.
 
 After downloading, plase place the train, dev, and eval raw wave folders of 19PS under `/home/xieyuankun/data/asv2019PS/`.
 
