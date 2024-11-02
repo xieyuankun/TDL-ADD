@@ -104,7 +104,7 @@ class EmbeddingLoss(nn.Module):
             loss_f2r = torch.max(sim_f2r_hard - self.th_different_max, zero)
             loss_f2r = loss_f2r.mean()
             # r2f
-            sim_b2f_hard = torch.max(sim_f2r, dim=0)[0]
+            sim_r2f_hard = torch.max(sim_f2r, dim=0)[0]
             zero = torch.zeros_like(sim_r2f_hard)
             loss_r2f = torch.max(sim_r2f_hard - self.th_different_max, zero)
             loss_r2f = loss_r2f.mean()
